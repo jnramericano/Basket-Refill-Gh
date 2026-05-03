@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Basket Refill GH</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">BR</span>
+        <span>Basket Refill GH</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#plans">Plans</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#messages">Comments</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <section class="container auth-hero">
+      <span class="eyebrow">Account access</span>
+      <h1>Log in to continue.</h1>
+      <p>
+        Students can log in with the account created during sign-up.
+        Admins can use the same page to open the dashboard.
+      </p>
+    </section>
+
+    <section class="container auth-grid">
+      <!-- STUDENT LOGIN -->
+      <article class="auth-card">
+        <span class="eyebrow">Student login</span>
+        <h2>Student account</h2>
+        <p>Use your email and password to access your basket and dashboard.</p>
+
+        <form class="auth-form" id="studentLoginForm">
+          <div>
+            <label for="studentEmail">Email address</label>
+            <input type="email" id="studentEmail" placeholder="you@example.com" required />
+          </div>
+
+          <div>
+            <label for="studentPassword">Password</label>
+            <input type="password" id="studentPassword" placeholder="Enter password" required />
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">
+            Log in
+          </button>
+
+          <p class="auth-message" id="studentLoginMessage"></p>
+        </form>
+
+        <div class="auth-links">
+          <a href="index.html#signup">Need to sign up?</a>
+          <a href="index.html">Back to website</a>
+        </div>
+
+        <p class="auth-note">
+          After login, students will be taken back to the site dashboard.
+        </p>
+      </article>
+
+      <!-- ADMIN LOGIN -->
+      <article class="auth-card">
+        <span class="eyebrow">Admin login</span>
+        <h2>Admin access</h2>
+        <p>Use the admin account to open the private dashboard.</p>
+
+        <form class="auth-form" id="adminLoginForm">
+          <div>
+            <label for="adminEmail">Admin email</label>
+            <input type="email" id="adminEmail" value="admin@basketrefillgh.com" required />
+          </div>
+
+          <div>
+            <label for="adminPassword">Password</label>
+            <input type="password" id="adminPassword" placeholder="Enter admin password" required />
+          </div>
+
+          <button type="submit" class="btn btn-secondary full-width">
+            Open admin dashboard
+          </button>
+
+          <p class="auth-message" id="adminLoginMessage"></p>
+        </form>
+
+        <p class="auth-note">
+          Demo admin password: <strong>admin123</strong>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    const role = params.get("role");
+
+    const studentEmail = document.getElementById("studentEmail");
+    const adminEmail = document.getElementById("adminEmail");
+
+    if (email) {
+      studentEmail.value = email;
+    }
+
+    if (role === "admin") {
+      adminEmail.focus();
+    }
+
+    document.getElementById("studentLoginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const message = document.getElementById("studentLoginMessage");
+      message.textContent = "";
+
+      const user = BRGHAuth.loginStudent(
+        studentEmail.value.trim(),
+        document.getElementById("studentPassword").value
+      );
+
+      if (!user) {
+        message.textContent = "Invalid email or password.";
+        message.classList.add("error");
+        return;
+      }
+
+      message.classList.remove("error");
+      message.textContent = "Login successful. Redirecting...";
+
+      window.location.href = "index.html#dashboard";
+    });
+
+    document.getElementById("adminLoginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const message = document.getElementById("adminLoginMessage");
+      message.textContent = "";
+
+      const ok = BRGHAuth.loginAdmin(
+        adminEmail.value.trim(),
+        document.getElementById("adminPassword").value
+      );
+
+      if (!ok) {
+        message.textContent = "Invalid admin credentials.";
+        message.classList.add("error");
+        return;
+      }
+
+      message.classList.remove("error");
+      message.textContent = "Admin access granted. Redirecting...";
+
+      window.location.href = "admin.html";
+    });
+  </script>
+</body>
+</html>

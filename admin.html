@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Basket Refill GH</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <nav class="container nav">
+      <a href="index.html" class="brand" aria-label="Basket Refill GH home">
+        <span class="brand-mark">BR</span>
+        <span>Basket Refill GH</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false">
+        Menu
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Website</a>
+        <a href="index.html#plans">Plans</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#messages">Comments</a>
+        <a href="login.html?role=admin">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+      <div class="admin-title-row">
+        <div>
+          <p class="eyebrow">Admin dashboard</p>
+          <h1>Orders, sign-ups, and messages</h1>
+          <p>
+            Manage student sign-ups, single-item orders, subscription drafts, and comments.
+          </p>
+        </div>
+
+        <div class="admin-actions">
+          <a href="index.html" class="btn btn-secondary">View website</a>
+          <button class="btn btn-secondary" id="refreshBtn" type="button">Refresh</button>
+          <button class="btn btn-secondary" id="seedBtn" type="button">Sample data</button>
+          <button class="btn btn-secondary" id="exportBtn" type="button">Export CSV</button>
+          <button class="btn btn-secondary" id="copyEmailsBtn" type="button">Copy emails</button>
+          <button class="btn btn-danger" id="clearDataBtn" type="button">Clear data</button>
+          <button class="btn btn-outline" id="logoutBtn" type="button">Logout</button>
+        </div>
+      </div>
+
+      <div class="admin-stats-grid">
+        <article class="admin-stat-card">
+          <span>Total sign-ups</span>
+          <strong id="totalLeads">0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>New leads</span>
+          <strong id="newLeads">0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>Single-item orders</span>
+          <strong id="singleOrders">0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>Estimated value</span>
+          <strong id="monthlyValue">GHS 0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>Messages</span>
+          <strong id="messageStat">0</strong>
+        </article>
+      </div>
+
+      <section class="admin-panel">
+        <div class="admin-toolbar">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search name, email, school, item, comment..."
+          />
+
+          <select id="planFilter">
+            <option value="all">All plans</option>
+            <option value="basic">Basic</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="none">No subscription</option>
+          </select>
+
+          <select id="orderTypeFilter">
+            <option value="all">All order types</option>
+            <option value="subscription">Monthly subscription</option>
+            <option value="single">Single item order</option>
+          </select>
+
+          <select id="statusFilter">
+            <option value="all">All statuses</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Waitlist">Waitlist</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+
+          <select id="schoolFilter">
+            <option value="all">All schools</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="content-grid" style="margin-top: 18px;">
+        <section class="card card-pad">
+          <div class="admin-list-header">
+            <div>
+              <h2>Student sign-ups and orders</h2>
+              <p id="lastUpdated">Last updated: —</p>
+            </div>
+            <span id="leadCountLabel">0 records</span>
+          </div>
+
+          <div class="admin-leads-list" id="leadsContainer"></div>
+        </section>
+
+        <aside class="side-stack">
+          <article class="card card-pad">
+            <div class="eyebrow">Plan breakdown</div>
+            <h3 style="margin:.8rem 0 .5rem; font-size:1.3rem;">Requests by plan</h3>
+            <div class="plan-bar" id="planBars"></div>
+          </article>
+
+          <article class="card card-pad">
+            <div class="eyebrow">Quick notes</div>
+            <h3 style="margin:.8rem 0 .5rem; font-size:1.3rem;">How to use this panel</h3>
+            <ul class="quick-list">
+              <li>Search before exporting.</li>
+              <li>Mark students as contacted after follow-up.</li>
+              <li>Add admin notes for delivery details.</li>
+              <li>Use sample data if the dashboard is empty.</li>
+            </ul>
+          </article>
+
+          <article class="card card-pad">
+            <div class="eyebrow">Mission reminder</div>
+            <h3 style="margin:.8rem 0 .5rem; font-size:1.3rem;">Brand purpose</h3>
+            <p class="muted" style="margin:0; line-height:1.8;">
+              “To make everyday shopping affordable, convenient, and eco-friendly through refill and subscription services.”
+            </p>
+          </article>
+        </aside>
+      </div>
+
+      <section class="admin-panel" style="margin-top: 18px;">
+        <div class="admin-list-header">
+          <div>
+            <h2>Student comments and product requests</h2>
+            <p>Questions, product suggestions, delivery instructions, and feedback.</p>
+          </div>
+          <span id="messageCountLabel">0 messages</span>
+        </div>
+
+        <div class="admin-leads-list" id="messagesContainer"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">BR</span>
+          <span>Basket Refill GH</span>
+        </a>
+        <p>Admin panel for leads, comments, and order requests.</p>
+      </div>
+      <div>
+        <h3>Access</h3>
+        <p>Protected dashboard for internal use only.</p>
+      </div>
+      <div>
+        <h3>Reminder</h3>
+        <p>Login happens from <strong>login.html</strong>, not here.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="auth.js"></script>
+  <script>
+    BRGHAuth.requireAdmin();
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>

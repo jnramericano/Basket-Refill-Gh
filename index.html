@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Basket Refill GH | Student Grocery Subscriptions</title>
+
+  <meta
+    name="description"
+    content="Basket Refill GH provides monthly grocery subscriptions, single-item supermarket orders and refill options for university and SHS students in Ghana."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a href="#home" class="brand" aria-label="Basket Refill GH home">
+        <span class="brand-mark">BR</span>
+        <span>Basket Refill GH</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false">
+        Menu
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#how">How it works</a>
+        <a href="#plans">Plans</a>
+        <a href="#shop">Shop items</a>
+        <a href="#impact">Why refill?</a>
+        <a href="#messages">Comments</a>
+        <a href="#signup">Sign up</a>
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Student grocery and supermarket service</p>
+
+          <h1>Affordable groceries, delivered monthly. With less plastic.</h1>
+
+          <p class="hero-text">
+            Basket Refill GH helps university and senior high school students manage
+            provisions, supermarket items and refillable essentials through monthly
+            subscriptions and one-time orders.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#signup" class="btn btn-primary">
+              Start subscription — from GHS 99/month
+            </a>
+
+            <a href="#shop" class="btn btn-secondary">
+              Shop single items
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <div>
+              <strong>Monthly plans</strong>
+              <span>Basic, Standard and Premium subscription options.</span>
+            </div>
+
+            <div>
+              <strong>Single-item orders</strong>
+              <span>Order supermarket items without a subscription.</span>
+            </div>
+
+            <div>
+              <strong>Refill support</strong>
+              <span>Reusable containers for selected groceries and essentials.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="hero-image">
+            <img
+              src="/assets/assetsbasket-refill-hero.jpg"
+              alt="Basket of groceries for Basket Refill GH"
+              onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+            />
+
+            <div class="hero-placeholder" hidden>
+              <span>Basket Refill GH</span>
+              <p>Monthly provisions, supermarket items and refillable essentials.</p>
+            </div>
+          </div>
+
+          <div class="selected-plan-preview">
+            <div>
+              <span>Selected plan</span>
+              <strong id="heroSelectedPlan">Basic</strong>
+            </div>
+
+            <div>
+              <span>Estimated total</span>
+              <strong id="heroSelectedTotal">GHS 99</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container statement-grid">
+        <article class="statement-card">
+          <span>Vision</span>
+          <p>To lead the future of sustainable shopping in Ghana.</p>
+        </article>
+
+        <article class="statement-card">
+          <span>Mission</span>
+          <p>
+            To make everyday shopping affordable, convenient, and eco-friendly
+            through refill and subscription services.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">How it works</p>
+          <h2>Three simple steps</h2>
+          <p>
+            Students can choose a monthly plan, add single supermarket items,
+            and receive scheduled delivery.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h3>Choose a plan or single order</h3>
+            <p>
+              Select a monthly basket or choose supermarket items for a one-time order.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h3>Add your items</h3>
+            <p>
+              Add provisions, cleaning products, toiletries, snacks, drinks or stationery.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h3>Receive delivery</h3>
+            <p>
+              Get your basket delivered to your hostel, hall, home or approved school location.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section class="section section-white" id="plans">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Subscription plans</p>
+          <h2>Clear monthly pricing</h2>
+          <p>
+            Choose a starter plan now. Payment will be added later. This version
+            records subscription interest and creates a student account.
+          </p>
+        </div>
+
+        <div class="plans-grid" id="plansGrid">
+          <article class="plan-card">
+            <span class="plan-badge">Plan</span>
+            <h3>Basic</h3>
+            <p class="plan-description">Best for light monthly shopping and essentials.</p>
+            <div class="plan-price">GHS 99 <span>/month</span></div>
+            <ul class="plan-features">
+              <li>Starter monthly basket</li>
+              <li>Simple refill support</li>
+              <li>Good for students on a budget</li>
+            </ul>
+            <a href="#signup" class="btn btn-primary">Choose plan</a>
+          </article>
+
+          <article class="plan-card recommended">
+            <span class="plan-badge">Most popular</span>
+            <h3>Standard</h3>
+            <p class="plan-description">Balanced for most students with extra value.</p>
+            <div class="plan-price">GHS 179 <span>/month</span></div>
+            <ul class="plan-features">
+              <li>Bigger basket</li>
+
+              <li>More refill items</li>
+              <li>Better monthly value</li>
+            </ul>
+            <a href="#signup" class="btn btn-primary">Choose plan</a>
+          </article>
+
+          <article class="plan-card">
+            <span class="plan-badge">Plan</span>
+            <h3>Premium</h3>
+            <p class="plan-description">For maximum convenience and priority service.</p>
+            <div class="plan-price">GHS 299 <span>/month</span></div>
+            <ul class="plan-features">
+              <li>Largest basket</li>
+              <li>Priority support</li>
+              <li>Best for busy students</li>
+            </ul>
+            <a href="#signup" class="btn btn-primary">Choose plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP SINGLE ITEMS -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Shop single items</p>
+          <h2>Everything in the supermarket, from groceries to detergents.</h2>
+          <p>
+            Quickly search and select single products for one-time delivery. Choose
+            rice, soap, detergent, stationery, snacks, toiletries and more — all in one place.
+          </p>
+        </div>
+
+        <div class="shop-note">
+          <p>Need one item only? Select "Single item / one-time order" and add exactly what you need.</p>
+        </div>
+
+        <div class="shop-tools">
+          <input
+            type="search"
+            id="productSearch"
+            placeholder="Search rice, detergent, shampoo, snacks, stationery..."
+          />
+
+          <select id="categoryFilter">
+            <option value="">All categories</option>
+            <option value="Provisions">Provisions</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Toiletries">Toiletries</option>
+            <option value="Snacks & Drinks">Snacks & Drinks</option>
+            <option value="Stationery">Stationery</option>
+          </select>
+
+          <select id="orderType">
+            <option value="subscription">Add to monthly subscription</option>
+            <option value="single">Single item / one-time order</option>
+          </select>
+        </div>
+
+        <div class="shop-results">
+          <div>
+            <p class="small-label">Available items</p>
+            <span id="availableItemCount">0 items</span>
+          </div>
+          <p class="small-note">Search or filter items below, then use the quantity controls to add exactly what you need.</p>
+        </div>
+
+        <div class="refill-layout">
+          <div class="items-grid" id="itemsGrid"></div>
+
+          <aside class="basket-card">
+            <div class="basket-card-header">
+              <div>
+                <p class="small-label">Current basket</p>
+                <h3>Order summary</h3>
+              </div>
+
+              <span id="basketItemCount">0 items</span>
+            </div>
+
+            <div class="summary-rows">
+              <div>
+                <span>Order type</span>
+                <strong id="summaryOrderType">Monthly subscription</strong>
+              </div>
+
+              <div>
+                <span>Plan</span>
+                <strong id="summaryPlanName">Basic</strong>
+              </div>
+
+              <div>
+                <span>Plan price</span>
+                <strong id="summaryPlanPrice">GHS 99</strong>
+              </div>
+            </div>
+
+            <div class="selected-items" id="selectedItemsList">
+              <p class="empty-text">No single items selected yet.</p>
+            </div>
+
+            <div class="summary-total">
+              <span>Estimated total</span>
+              <strong id="summaryTotal">GHS 99</strong>
+            </div>
+
+            <div class="basket-actions">
+              <a href="#signup" class="btn btn-primary full-width">
+                Continue to details
+              </a>
+
+              <button class="btn btn-secondary full-width" id="clearItemsBtn">
+                Clear items
+              </button>
+            </div>
+
+            <p class="small-note">
+              Payment is not active yet. This creates an order or subscription draft.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY REFILL -->
+    <section class="section section-white" id="impact">
+      <div class="container impact-layout">
+        <div>
+          <p class="eyebrow">Why refill?</p>
+
+          <h2>Lower waste, better budgeting and fewer last-minute purchases.</h2>
+
+          <p class="section-text">
+            Many student groceries are bought repeatedly in small plastic packages.
+            Basket Refill GH supports reusable containers for selected items to reduce
+            unnecessary packaging while helping students plan their monthly provisions.
+          </p>
+
+          <div class="benefit-list">
+            <div>
+              <h3>Cost control</h3>
+              <p>
+                Monthly planning helps students reduce emergency purchases and manage
+                their grocery budget more clearly.
+              </p>
+            </div>
+
+            <div>
+              <h3>Less plastic</h3>
+              <p>
+                Refillable containers can reduce single-use packaging for common items.
+              </p>
+            </div>
+
+            <div>
+              <h3>Convenience</h3>
+              <p>
+                Scheduled delivery saves time during lectures, prep, exams and busy school periods.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="impact-panel">
+          <p class="impact-label">
+            Estimated monthly impact for
+            <strong id="impactPlanName">Basic</strong>
+          </p>
+
+          <div class="impact-grid">
+            <div class="impact-card">
+              <strong id="plasticSaved">6</strong>
+              <span>plastic packs avoided</span>
+            </div>
+
+            <div class="impact-card">
+              <strong id="co2Reduced">0.3kg</strong>
+              <span>estimated CO₂ reduced</span>
+            </div>
+
+            <div class="impact-card">
+              <strong id="containersUsed">2</strong>
+              <span>containers reused</span>
+            </div>
+          </div>
+
+          <p class="impact-note">
+            Figures are demonstration estimates and can be replaced with real data after launch.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- COMMENTS / CONTACT -->
+    <section class="section section-white" id="messages">
+      <div class="container message-layout">
+        <div>
+          <p class="eyebrow">Comments and requests</p>
+
+          <h2>Tell us what you need.</h2>
+
+          <p class="section-text">
+            Students can send questions, product requests, delivery instructions or
+            feedback. If an item is not listed in the shop, request it here.
+          </p>
+
+          <div class="signup-note">
+            <strong>Examples:</strong>
+            “Please add cornflakes”, “Can you deliver to my hostel?”, “I want a termly
+            SHS package”, or “I need toiletries with my basket.”
+          </div>
+        </div>
+
+        <form class="message-form" id="messageForm">
+          <label for="messageName">Name</label>
+          <input
+            type="text"
+            id="messageName"
+            placeholder="Your name"
+            required
+          />
+
+          <label for="messageContact">Email or phone</label>
+          <input
+            type="text"
+            id="messageContact"
+            placeholder="Email or WhatsApp number"
+            required
+          />
+
+          <label for="messageTopic">Topic</label>
+          <select id="messageTopic" required>
+            <option value="">Select topic</option>
+            <option value="Product request">Product request</option>
+            <option value="Delivery question">Delivery question</option>
+            <option value="Subscription question">Subscription question</option>
+            <option value="Refill question">Refill question</option>
+            <option value="General feedback">General feedback</option>
+          </select>
+
+          <label for="messageText">Comment or request</label>
+          <textarea
+            id="messageText"
+            rows="5"
+            placeholder="Type your comment, question or special request..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary full-width">
+            Send comment
+          </button>
+
+          <div class="form-message" id="messageResponse"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SIGN UP -->
+    <section class="section" id="signup">
+      <div class="container signup-layout">
+        <div>
+          <p class="eyebrow">Student sign-up</p>
+
+          <h2>Create your Basket Refill GH account</h2>
+
+          <p class="section-text">
+            Submit your details, create a password and save your subscription or
+            single-item order draft. After signing up, you can log in to view your account.
+          </p>
+
+          <div class="signup-note">
+            <strong>No payment is required.</strong>
+            This form creates a student account and records your subscription or order interest.
+          </div>
+
+          <div class="signup-note">
+            Already have an account?
+            <a href="login.html"><strong>Login here</strong></a>.
+          </div>
+        </div>
+
+        <div>
+          <form class="signup-form" id="signupForm">
+            <label for="fullName">Full name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Ama Mensah"
+              required
+            />
+
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="student@example.com"
+              required
+            />
+
+            <!-- PASSWORD FIELDS ADDED -->
+            <label for="password">Create password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Minimum 6 characters"
+              minlength="6"
+              required
+            />
+
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Repeat password"
+              minlength="6"
+              required
+            />
+
+            <label for="phone">Phone or WhatsApp</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="024 000 0000"
+            />
+
+            <label for="school">School</label>
+            <select id="school" name="school" required>
+              <option value="">Select your school</option>
+              <option value="University of Ghana, Legon">University of Ghana, Legon</option>
+              <option value="KNUST">KNUST</option>
+              <option value="UPSA">UPSA</option>
+              <option value="UCC">UCC</option>
+              <option value="Ashesi University">Ashesi University</option>
+              <option value="SHS Boarding Student">SHS Boarding Student</option>
+              <option value="SHS Day Student">SHS Day Student</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <label for="studentType">Student type</label>
+            <select id="studentType" name="studentType" required>
+              <option value="">Select student type</option>
+              <option value="University student">University student</option>
+              <option value="SHS boarding student">SHS boarding student</option>
+              <option value="SHS day student">SHS day student</option>
+            </select>
+
+            <label for="deliveryArea">Preferred delivery location</label>
+            <input
+              type="text"
+              id="deliveryArea"
+              name="deliveryArea"
+              placeholder="Hall, hostel, home area or school location"
+              required
+            />
+
+            <label for="orderPreference">Order preference</label>
+            <select id="orderPreference" name="orderPreference" required>
+              <option value="subscription">Monthly subscription / refill basket</option>
+              <option value="single">Single item / one-time supermarket order</option>
+            </select>
+
+            <label for="planSelect">Preferred plan</label>
+            <select id="planSelect" name="plan" required></select>
+
+            <label for="studentComments">Comments or special requests</label>
+            <textarea
+              id="studentComments"
+              name="studentComments"
+              rows="4"
+              placeholder="Example: I need toiletries, detergent, and noodles. Please deliver to my hostel reception."
+            ></textarea>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span>
+                I understand that this is a prototype account and no payment will be taken.
+              </span>
+            </label>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Create account and submit interest
+            </button>
+          </form>
+
+          <div class="confirmation-card" id="confirmationCard" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="brand footer-brand">
+          <span class="brand-mark">BR</span>
+          <span>Basket Refill GH</span>
+        </a>
+
+        <p>
+          Monthly student grocery subscriptions, supermarket item orders and optional refillable containers.
+        </p>
+
+        <p class="footer-small">
+          Vision: To lead the future of sustainable shopping in Ghana.
+        </p>
+
+        <p class="footer-small">
+          Mission: To make everyday shopping affordable, convenient, and eco-friendly
+          through refill and subscription services.
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Email: hello@basketrefillgh.com</p>
+        <p>WhatsApp: 024 000 0000</p>
+      </div>
+
+      <div>
+        <h3>FAQ</h3>
+
+        <details>
+          <summary>Is payment available?</summary>
+          <p>No. This version only records student interest and creates a demo account.</p>
+        </details>
+
+        <details>
+          <summary>Can SHS students use it?</summary>
+          <p>
+            Yes. SHS delivery can be arranged through parents, guardians or approved
+            school channels.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I order single supermarket items?</summary>
+          <p>
+            Yes. Students can select single items such as detergents, toiletries,
+            snacks, drinks and stationery.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do students need their own containers?</summary>
+          <p>
+            Students can use approved refill containers during onboarding.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Basket Refill GH.</span>
+      <span>
+        Prototype without payment integration.
+        <a href="login.html?role=admin">Admin login</a>
+      </span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
